@@ -76,19 +76,12 @@ dcm-formatter/
 [UV](https://github.com/astral-sh/uv) 是一个快速、可靠的Python包管理工具。推荐使用UV安装依赖：
 
 ```bash
-# 安装UV (如果尚未安装)
-curl -sSf https://astral.sh/uv/install.sh | sh
+# 安装UV (使用powershell安装)
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 
 # 创建虚拟环境并安装依赖
 uv venv
 uv sync
-
-# 激活虚拟环境
-# Windows:
-.\.venv\Scripts\activate
-# Linux/Mac:
-source .venv/bin/activate
-```
 
 ## 使用方法
 
@@ -104,7 +97,7 @@ uv run main.py 输入目录路径 [选项]
 |------|------|
 | `input_dir` | 必选，包含DICOM文件的根目录路径 |
 | `--output_dir` | 可选，输出目录，默认与输入目录相同 |
-| `--resize_factor` | 可选，调整大小的比例因子，默认为2/3 |
+| `--resize_factor` | 可选，调整大小的比例因子，默认不压缩 |
 | `--quality` | 可选，JPG质量(1-100)，默认为90 |
 | `--workers` | 可选，并行工作进程数量，默认使用所有CPU核心 |
 | `--verbose, -v` | 可选，显示详细日志 |
@@ -117,6 +110,9 @@ uv run main.py 输入目录路径 [选项]
 ```bash
 # 完整功能（转换+信息提取）
 uv run main.py D:/DicomData
+
+# 指定输出目录
+uv run main.py D:/DicomData --output_dir D:/output_dir
 
 # 仅执行DICOM到JPG转换
 uv run main.py D:/DicomData --no_extract
