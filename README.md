@@ -39,6 +39,7 @@ dcm-formatter/
 │   └── 其他受试者/
 └── 其他日期/
 ```
+![image](https://github.com/user-attachments/assets/68d5a3d8-51f3-43fd-884c-870b3528a9a1)
 
 ## 输出格式
 
