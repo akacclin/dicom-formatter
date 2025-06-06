@@ -423,7 +423,7 @@ def process_subject_directory(subject_dir: Path, output_base_dir: Path, num_work
     sequences = find_latest_sequences(sequences)
     
     # 创建输出目录
-    output_dir = output_base_dir / 'converted' / body_part / subject_id
+    output_dir = output_base_dir / body_part / subject_id
     
     # 转换每个序列
     total_converted = 0

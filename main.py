@@ -18,7 +18,7 @@ def check_converted_folder(output_path: Path) -> bool:
     检查是否存在converted文件夹
     返回True表示可以继续执行，False表示需要终止执行
     """
-    converted_path = output_path / 'converted'
+    converted_path = output_path
     if converted_path.exists():
         logger.warning(f"检测到已存在converted文件夹: {converted_path}")
         user_input = input("是否删除已存在的converted文件夹？(y/n): ").lower().strip()
@@ -69,7 +69,7 @@ def main():
         logger.error(f"指定的路径不是有效目录: {input_path}")
         return
         
-    output_path = Path(args.output_dir) if args.output_dir else input_path
+    output_path = Path(args.output_dir) if args.output_dir else Path('Converted')
     
     # 确保输出目录存在
     output_path.mkdir(parents=True, exist_ok=True)
