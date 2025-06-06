@@ -68,15 +68,17 @@ def main():
     elif not input_path.is_dir():
         logger.error(f"指定的路径不是有效目录: {input_path}")
         return
-        
+    
+    # 检查converted文件夹
+    if not check_converted_folder(output_path):
+        return
+
     output_path = Path(args.output_dir) if args.output_dir else Path('Converted')
     
     # 确保输出目录存在
     output_path.mkdir(parents=True, exist_ok=True)
 
-    # 检查converted文件夹
-    if not check_converted_folder(output_path):
-        return
+
 
     # 1. 执行DICOM信息提取
     if not args.no_extract:
