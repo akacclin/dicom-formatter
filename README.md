@@ -84,8 +84,6 @@ uv venv
 uv sync
 
 ## 使用方法
-
-```bash
 uv run main.py
 ```
 
