@@ -85,10 +85,8 @@ uv sync
 
 ## 使用方法
 
-### 基本用法
-
 ```bash
-uv run main.py 输入目录路径 [选项]
+uv run main.py
 ```
 
 ### 参数说明
