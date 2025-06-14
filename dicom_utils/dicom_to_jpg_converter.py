@@ -355,7 +355,7 @@ def process_mra_to_mip(sequence_dir: Path, output_dir: Path) -> bool:
         # 构建命令行参数
         cmd = [
             sys.executable,  # 当前Python解释器路径
-            "MRA_to_MIP.py",
+            "dicom_utils/MRA_to_MIP.py",
             sequence_dir.as_posix(),   # 输入路径
             "--output", output_dir.as_posix(),  # 输出路径
             "--axis", "Z",             # 默认使用Y轴旋转
